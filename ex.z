@@ -3,3 +3,8 @@ Z => Z => Z and := fn(Z p) -> fn(Z q) -> if(lt(1)(p), 0, q);
 Z => Z => Z or := fn(Z p) -> fn(Z q) -> if(lt(1)(p), q, 1);
 Z => Z => Z morgan1 := fn(Z p) -> fn(Z q) -> and(not(p))(not(q));
 Z => Z => Z morgan2 := fn(Z p) -> fn(Z q) -> or(not(p))(not(q));
+
+
+
+
+Z=>Z succ := fn(Z z) -> sub(-1)(z)
