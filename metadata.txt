@@ -7,3 +7,22 @@ double mean(const vector<double>& v) {
 
 
 
+double pearson_r(const vector<double>& A, const vector<double>& B) {
+  double meanA = mean(A);
+  double meanB = mean(B);
+
+   double num = 0;
+   double denA = 0;
+   double denB = 0;
+
+   for (int i = 0; i < A.size(); i++) {
+     double diffA = A[i] - meanA;
+     double diffB = B[i] - meanB;
+
+   num += diffA * diffB;
+   denA += diffA * diffA;
+   denB += diffB * diffB;
+
+}
+
+return num / sqrt(denA * denB);
