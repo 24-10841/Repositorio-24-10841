@@ -26,3 +26,36 @@ double pearson_r(const vector<double>& A, const vector<double>& B) {
 }
 
 return num / sqrt(denA * denB);
+
+
+
+
+
+
+
+
+
+vector<char> dec_to_base(int n, int base) {
+    if (n == 0) return {'0'};
+
+    vector<char> res;
+    while (n > 0) {
+        int r = n % base;
+        if (r < 10) res.push_back('0' + r);
+        else res.push_back('A' + (r - 10));
+        n /= base;
+    }
+    reverse(res.begin(), res.end());
+    return res;
+}
+
+int base_to_dec(const vector<char>& v, int base) {
+    int res = 0;
+    for (int i = 0; i < v.size(); i++) {
+        int val;
+        if (v[i] >= '0' && v[i] <= '9') val = v[i] - '0';
+        else val = v[i] - 'A' + 10;
+        res = res * base + val;
+    }
+    return res;
+}
