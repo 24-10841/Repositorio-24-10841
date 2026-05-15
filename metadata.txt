@@ -1,1 +1,9 @@
+double mean(const vector<double>& v) {
+    double suma = 0;
+    for (double num : v) suma += num;
+    return suma / v.size();
+}
+
+
+
 
