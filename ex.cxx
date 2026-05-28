@@ -188,7 +188,59 @@ int main() {
 
 
 
+#include <iostream>
+#include <string>
+using namespace std;
 
+void swap_int(int& xx, int& yy) {
+    int temp = xx;
+    xx = yy;
+    yy = temp;
+}
+
+
+void swap_double(double& xx, double& yy) {
+    double temp = xx;
+    xx = yy;
+    yy = temp;
+}
+
+
+void swap_cstring(const char*& xx, const char*& yy) {
+    const char* temp = xx;
+    xx = yy;
+    yy = temp;
+}
+
+
+void swap_string(string& xx, string& yy) {
+    string temp = xx;
+    xx = yy;
+    yy = temp;
+}
+
+int main() {
+    
+    int a = 5, b = 10;
+    swap_int(a, b);
+    cout << "int: " << a << " " << b << endl;
+
+    double x = 1.5, y = 2.5;
+    swap_double(x, y);
+    cout << "double: " << x << " " << y << endl;
+
+    const char* s1 = "hola";
+    const char* s2 = "adios";
+    swap_cstring(s1, s2);
+    cout << "cstring: " << s1 << " " << s2 << endl;
+
+   
+    string str1 = "uno", str2 = "dos";
+    swap_string(str1, str2);
+    cout << "string: " << str1 << " " << str2 << endl;
+
+    return 0;
+}
 
 
 
