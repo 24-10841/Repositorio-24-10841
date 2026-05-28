@@ -245,3 +245,102 @@ int main() {
 
 
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+template <typename T>
+void swap_generic(T& xx, T& yy) {
+    T temp = xx;
+    xx = yy;
+    yy = temp;
+}
+
+int main() {
+
+    int a = 5, b = 10;
+    double x = 1.5, y = 2.5;
+    string s1 = "hola", s2 = "mundo";
+    const char* cs1 = "uno";
+    const char* cs2 = "dos";
+
+    
+    swap_generic(a, b);
+    swap_generic(x, y);
+    swap_generic(s1, s2);
+    swap_generic(cs1, cs2);
+
+    cout << "int: " << a << " " << b << endl;
+    cout << "double: " << x << " " << y << endl;
+    cout << "string: " << s1 << " " << s2 << endl;
+    cout << "cstring: " << cs1 << " " << cs2 << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+template <typename T>
+void swap_generic(T& xx, T& yy) {
+    T temp = xx;
+    xx = yy;
+    yy = temp;
+}
+
+void pause() {
+    fprintf(stdout, "Press <Enter> to continue - Presione <Entrar> para continuar\n");
+    getchar();
+}
+
+int main() {
+
+   
+    {
+        int x = 67;
+        int y = 42;
+        swap_generic(x, y);
+        fprintf(stdout, "x: %d    y: %d\n", x, y);
+        pause();
+    }
+
+
+    {
+        double x = 67.7;
+        double y = 42.2;
+        swap_generic(x, y);
+        fprintf(stdout, "x: %f    y: %f\n", x, y);
+        pause();
+    }
+
+    {
+        const char *x = "Veronica";
+        const char *y = "Arabella";
+        swap_generic(x, y);
+        fprintf(stdout, "x: %s    y: %s\n", x, y);
+        pause();
+    }
+
+
+    {
+        string x = "Veronica";
+        string y = "Arabella";
+        swap_generic(x, y);
+        fprintf(stdout, "x: %s    y: %s\n", x.c_str(), y.c_str());
+        pause();
+    }
+
+    return 0;
+}
+
